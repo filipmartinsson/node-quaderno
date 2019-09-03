@@ -36,6 +36,16 @@ class Resource {
     return this.quaderno.get(`/${this.name}/${id}.json`);
   }
 
+   /**
+   * CUSTOM ACTION
+   * Returns the resource for the resource with the query parameter used for filter.
+   * @param {String} [query] query object {'key': 'value'}
+   * @return {Promise} The requested resource.
+   */
+  findByQuery(query){
+    return this.quaderno.get(`/${this.name}.json`, query);
+  }
+
   /**
    * Will update the resource with the provided parameters.
    * @param {Int} [id] Resource id.
